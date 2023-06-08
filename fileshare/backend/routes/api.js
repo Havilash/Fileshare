@@ -1,29 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
-/**Toy Car Controller */
 const {
   getShare,
   createShare,
+  deleteShare,
   getFileByName,
   createFile,
   updateFile,
   deleteFile,
 } = require("../controllers/shareController");
 
-/**
- *
- *
- * Add your routes for your API endpoints here. Don't forget to add your  controller!
- */
+router.use(express.json());
 
 router.route("/share").post(createShare);
-router.route("/share/:key").get(getShare);
-router
-  .route("/share/:key/:filename")
-  .get(getFileByName)
-  .post(createFile)
-  .delete(deleteFile)
-  .patch(updateFile);
+router.route("/share/:key").get(getShare).delete(deleteShare);
+router.route("/share/:key/file").post(createFile);
+router.route("/share/:key/file/:filename").delete(deleteFile).patch(updateFile);
 
 module.exports = router;

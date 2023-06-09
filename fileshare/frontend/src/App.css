@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: "Consolas" monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+main {
+  position: absolute;
+  width: calc(100% - var(--nav-width));
+  left: var(--nav-width);
+}
+
+*,
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: all;
+  margin: 0;
+  height: 100vh;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2.25rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 2.25rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 72rem;
+  width: 100%;
+  height: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding-top: 10vh;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 0;
+  }
+}
+
+.error-text {
+  color: #ef4444;
+}
+
+.error,
+.success,
+.loading {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.error {
+  background-color: #dc2626;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.success {
+  background-color: #059669;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading {
+  background-color: #d97706;
+  color: white;
 }

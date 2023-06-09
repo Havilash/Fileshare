@@ -1,0 +1,33 @@
+nav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: var(--bg-2-color);
+  width: var(--nav-width);
+  height: 100vh;
+  padding: 4rem;
+}
+
+nav > .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-alt-color);
+}
+
+nav > .title > .icon {
+  color: var(--primary-color);
+}
+
+nav > ul li > a {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--text-alt-color);
+  font-size: x-large;
+}
+
+nav > ul li {
+  display: flex;
+}

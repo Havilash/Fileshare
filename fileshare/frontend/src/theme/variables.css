@@ -1,0 +1,23 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+/* @import url("https://fonts.googleapis.com/css2?family=Consolas"); */
+
+@font-face {
+  font-family: "Consolas";
+  src: local("Consolas"),
+    url(../assets/fonts/Consolas/Consolas.ttf) format("truetype");
+}
+
+/** CSS Variables **/
+:root {
+  --nav-width: 33.33%;
+
+  --primary-color: #388af8;
+  --secondary-color: #dfefff;
+
+  --text-color: #030305;
+  --text-alt-color: #f9fafc;
+
+  --bg-1-color: #f9fafc;
+  --bg-2-color: #16283e;
+}

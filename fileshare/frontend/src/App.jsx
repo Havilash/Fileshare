@@ -12,15 +12,15 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <main className="container">
+      <main>
         <Routes>
           <Route path="/*" element={<NotFound />} />
 
           <Route path="/" element={<Navigate to="/newshare" />} />
-          <Route path="/share/:key" element={<Share />} />
+          <Route path="/share" element={<Share />} />
           <Route path="/newshare" element={<NewShare />} />
           <Route path="/myshares" element={<MyShares />} />
-          <Route path="/contact" element={<Recent />} />
+          <Route path="/recent" element={<Recent />} />
         </Routes>
       </main>
     </div>

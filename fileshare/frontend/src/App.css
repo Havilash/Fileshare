@@ -14,7 +14,8 @@ body {
 main {
   position: absolute;
   width: calc(100% - var(--nav-width));
-  left: var(--nav-width);
+  min-height: 100%;
+  right: 0;
 }
 
 *,
@@ -70,6 +71,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 img {
@@ -81,8 +83,7 @@ img {
   max-width: 72rem;
   width: 100%;
   height: 100%;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin: 1rem 1.5rem;
   padding-top: 10vh;
 }
 
@@ -117,4 +118,34 @@ img {
 .loading {
   background-color: #d97706;
   color: white;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead th {
+  border-bottom: 0.25rem solid gray;
+  color: rgb(78, 78, 78);
+  text-align: left;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+tr {
+  width: 100%;
+  text-align: start;
+}
+
+th,
+td {
+  padding-top: 1rem;
+  vertical-align: center;
+}
+
+table .group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

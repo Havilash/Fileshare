@@ -2,13 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Consolas;
 }
 
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  font-family: "Consolas" monospace;
 }
 
 main {
@@ -120,32 +120,20 @@ img {
   color: white;
 }
 
-table {
-  border-collapse: collapse;
-}
-
-thead th {
-  border-bottom: 0.25rem solid gray;
-  color: rgb(78, 78, 78);
-  text-align: left;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-}
-
-tr {
-  width: 100%;
-  text-align: start;
-}
-
-th,
-td {
-  padding-top: 1rem;
-  vertical-align: center;
-}
-
-table .group {
+.button {
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  font-size: larger;
   gap: 1rem;
+}
+
+.button:hover {
+  opacity: 80%;
 }

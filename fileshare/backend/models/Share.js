@@ -16,7 +16,7 @@ const FileSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: { createdAt: "created_at" } }
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
 const ShareCollectionSchema = new mongoose.Schema(

@@ -65,23 +65,11 @@ nav > ul li.active {
 }
 
 nav > .create-share {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 1rem;
-  border-radius: 10px;
-  border: none;
   background: var(--bg-1-color);
-  cursor: pointer;
-  font-size: larger;
-  gap: 1rem;
-  opacity: 50%;
-}
-
-nav > .create-share.active {
+  color: black;
   opacity: 100%;
 }
 
-nav > .create-share.active:hover {
-  opacity: 80%;
+nav > .create-share:not(.active) {
+  opacity: 50%;
 }

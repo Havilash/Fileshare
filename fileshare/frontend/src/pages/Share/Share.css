@@ -1,0 +1,41 @@
+.share-page .tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.share-page .tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 5px;
+  padding: 2rem 1rem;
+}
+
+.share-page .preview {
+  display: flex;
+  justify-content: center;
+}
+
+.share-page .preview__content {
+  max-width: 100px;
+}
+
+.share-page .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.share-page .details__name {
+  text-align: center;
+}
+
+.share-page .details__date {
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  font-size: smaller;
+  opacity: 75%;
+}

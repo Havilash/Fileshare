@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:8000/api";
 
 export async function createShare(files) {
-  console.log(files);
   const response = await fetch(`${BASE_URL}/share`, {
     method: "POST",
     headers: {

@@ -14,7 +14,6 @@ const NAV_LINKS = [
 export default function Nav() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [showPopup, setShowPopup] = useState(false);
 
   async function handleCreateClick(e) {
     if (location.pathname.startsWith("/newshare")) {
@@ -22,8 +21,6 @@ export default function Nav() {
       try {
         const shareLink = "https://example.com/share"; // Replace with your share link
         await navigator.clipboard.writeText(shareLink);
-        setShowPopup(false);
-        setShowPopup(true);
       } catch (err) {
         console.error("Failed to copy text: ", err);
       }
@@ -32,15 +29,6 @@ export default function Nav() {
     }
   }
 
-  useEffect(() => {
-    if (!showPopup) return;
-    const timeout = setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
-
-    return () => clearTimeout(timeout);
-  }, [showPopup]);
-
   return (
     <aside>
       <nav>
@@ -48,13 +36,7 @@ export default function Nav() {
           <FiShare2 className="icon" size="4rem" />
           <h1>Fileshare</h1>
         </div>
-        {showPopup && <Popup message="Share Link copied to clipboard!" />}
-        <button
-          onClick={handleCreateClick}
-          className={`button create-share ${
-            location.pathname.startsWith("/newshare") && "active"
-          }`}
-        >
+        <button onClick={handleCreateClick} className="button create-share">
           <FiPlus />
           Create Share
         </button>

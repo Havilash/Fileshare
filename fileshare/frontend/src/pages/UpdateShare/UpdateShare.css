@@ -1,9 +1,9 @@
-.new-share {
+.update-share {
   overflow: hidden;
   width: 100%;
 }
 
-.new-share table {
+.update-share table {
   width: 100%;
 }
 
@@ -83,11 +83,12 @@ table .file-icon:hover {
   opacity: 0.8;
 }
 
-table .delete {
+.update-share .delete {
   background: rgb(255, 0, 0, 0.8);
   padding: 0.4rem;
   border: none;
   width: 5rem;
+  min-width: fit-content;
   border-radius: 5px;
   color: white;
   cursor: pointer;
@@ -122,4 +123,33 @@ table .delete:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.update-share .delete-share {
+  padding: 0.8rem;
+  font-size: large;
+  float: right;
+}
+
+.update-share .confirm-popup {
+  max-width: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.update-share .confirm-popup p {
+  font-size: larger;
+}
+
+.update-share .confirm-popup div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.update-share .confirm-popup button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
 }

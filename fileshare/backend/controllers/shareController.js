@@ -5,7 +5,6 @@ exports.createShare = async (req, res, next) => {
   try {
     const files = req.body;
     const key = crypto.randomBytes(32).toString("hex");
-    console.log(key, files);
     const share = await Share.create({ key, files });
     return res.status(201).json({
       success: true,

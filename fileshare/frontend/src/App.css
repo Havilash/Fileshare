@@ -16,6 +16,8 @@ main {
   width: calc(100% - var(--nav-width));
   min-height: 100%;
   right: 0;
+  display: flex;
+  justify-content: center;
 }
 
 *,

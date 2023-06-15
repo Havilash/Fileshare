@@ -69,7 +69,3 @@ nav > .create-share {
   color: black;
   opacity: 100%;
 }
-
-nav > .create-share:not(.active) {
-  opacity: 50%;
-}

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import "./UpdateShare.css";
 import { FiFile, FiPlus, FiSave, FiTrash2 } from "react-icons/fi";
 import { mimeTypeIcons } from "src/data/mimeTypes";
@@ -54,7 +59,7 @@ export default function UpdateShare() {
                 ...item,
                 name: file.name,
                 content,
-                mime_type: file.type,
+                mime_type: file.type || "plain/text",
                 updated_at: new Date().toLocaleDateString(),
               }
             : item
@@ -110,7 +115,8 @@ export default function UpdateShare() {
       return setError("The size of the content must not exceed 500MB.");
 
     try {
-      await updateShare(key, data);
+      const response = await updateShare(key, data);
+      navigate(`/share?key=${key}`);
     } catch (error) {
       console.error(error);
     }
@@ -147,16 +153,21 @@ export default function UpdateShare() {
             </div>
           </Popup>
         )}
-        <button className="delete delete-share" onClick={handleDeleteShare}>
-          Delete Share
-        </button>
+        <div className="top">
+          <button className="delete delete-share" onClick={handleDeleteShare}>
+            Delete Share
+          </button>
+          <Link className="button" to={`/share?key=${key}`}>
+            View
+          </Link>
+        </div>
         <table>
           <thead>
             <tr>
               <th>Name</th>
               <th>Content</th>
-              <th>Last Modified</th>
-              <th>Created</th>
+              <th>Modified</th>
+              <th className="created-column">Created</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -192,7 +203,7 @@ export default function UpdateShare() {
                         htmlFor={`file-input-${index}`}
                         className="file-upload-label"
                       >
-                        Select File
+                        Select
                       </label>
                       <input
                         id={`file-input-${index}`}
@@ -203,10 +214,12 @@ export default function UpdateShare() {
                   </td>
 
                   <td>{new Date(updated_at).toLocaleDateString()}</td>
-                  <td>{new Date(created_at).toLocaleDateString()}</td>
+                  <td className="created-column">
+                    {new Date(created_at).toLocaleDateString()}
+                  </td>
                   <td>
                     <button
-                      className="delete"
+                      className="delete delete-button"
                       onClick={() => handleDelete(index)}
                     >
                       <FiTrash2 size="1.5rem" />

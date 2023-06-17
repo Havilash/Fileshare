@@ -1,5 +1,5 @@
-// const BASE_URL = "http://localhost:8000/api";
-const BASE_URL = "http://172.20.10.2:8000/api";
+const BASE_URL = "http://localhost:8000/api";
+// const BASE_URL = "http://172.20.10.2:8000/api";
 
 export async function createShare(files) {
   const response = await fetch(`${BASE_URL}/share`, {

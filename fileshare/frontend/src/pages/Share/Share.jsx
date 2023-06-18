@@ -72,7 +72,11 @@ export default function UpdateShare() {
   };
 
   if (!share)
-    return <section className="share-page container">Share Not Found</section>;
+    return (
+      <section className="share-page not-found container">
+        <h2 className="subtitle">Share Not Found</h2>
+      </section>
+    );
 
   return (
     <section className="share-page container">

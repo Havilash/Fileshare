@@ -5,7 +5,6 @@ const FileSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
     },
     content: {
       type: String,
@@ -33,6 +32,8 @@ const ShareCollectionSchema = new mongoose.Schema(
   },
   { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
+
+ShareCollectionSchema.index({ key: 1, "files.name": 1 }, { unique: true });
 
 ShareCollectionSchema.path("files").validate(function (files) {
   const fileNames = files.map((file) => file.name);

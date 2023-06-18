@@ -20,6 +20,13 @@ async function toBase64(file) {
   });
 }
 
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${month}/${day}/${year}`;
+}
+
 export default function UpdateShare() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -60,7 +67,7 @@ export default function UpdateShare() {
                 name: file.name,
                 content,
                 mime_type: file.type || "plain/text",
-                updated_at: new Date().toLocaleDateString(),
+                updated_at: new Date().toISOString(),
               }
             : item
         )
@@ -99,8 +106,8 @@ export default function UpdateShare() {
         name: "New file",
         content: null,
         mime_type: "",
-        updated_at: new Date().toLocaleDateString(),
-        created_at: new Date().toLocaleDateString(),
+        updated_at: new Date().toISOString(),
+        created_at: new Date().toISOString(),
       },
     ]);
   };
@@ -213,9 +220,9 @@ export default function UpdateShare() {
                     </div>
                   </td>
 
-                  <td>{new Date(updated_at).toLocaleDateString()}</td>
+                  <td>{formatDate(new Date(updated_at))}</td>
                   <td className="created-column">
-                    {new Date(created_at).toLocaleDateString()}
+                    {formatDate(new Date(created_at))}
                   </td>
                   <td>
                     <button

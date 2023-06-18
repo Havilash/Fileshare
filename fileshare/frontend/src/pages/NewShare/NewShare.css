@@ -1,0 +1,11 @@
+.new-share {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-share .error-text {
+  font-size: 2rem;
+  color: black;
+}

@@ -55,7 +55,6 @@ export default function UpdateShare() {
       // Use the Clipboard API to copy the text
       try {
         await navigator.clipboard.writeText(shareLink);
-        console.log("Share link copied to clipboard");
         setShowPopup(true);
       } catch (err) {
         console.error("Failed to copy text: ", err);

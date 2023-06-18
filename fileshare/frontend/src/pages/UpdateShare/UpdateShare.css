@@ -7,11 +7,11 @@
   width: 100%;
 }
 
-table {
+.update-share table {
   border-collapse: collapse;
 }
 
-thead th {
+.update-share thead th {
   border-bottom: 0.25rem solid gray;
   color: #4e4e4e;
   text-align: left;
@@ -20,46 +20,46 @@ thead th {
   border-top: none;
 }
 
-tr {
+.update-share tr {
   text-align: start;
   width: 100%;
 }
 
-th,
-td {
+.update-share th,
+.update-share td {
   padding-top: 1rem;
   vertical-align: center;
 }
 
-td {
+.update-share td {
   padding-right: 1rem;
 }
 
-table td.type > div {
+.update-share table td.type > div {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-table tbody td.name input {
+.update-share table tbody td.name input {
   width: 100%;
   border: none;
   outline: none;
   font-size: large;
 }
 
-table tbody td.name {
+.update-share table tbody td.name {
   width: auto;
 }
 
-input[type="file"] {
+.update-share input[type="file"] {
   opacity: 0;
   width: 0.1px;
   height: 0.1px;
   position: absolute;
 }
 
-table .file-upload-label {
+.update-share table .file-upload-label {
   display: inline-block;
   padding: 0.5em 1em;
   background-color: #4e4e4e;
@@ -68,18 +68,18 @@ table .file-upload-label {
   cursor: pointer;
 }
 
-table .file-upload-label:hover {
+.update-share table .file-upload-label:hover {
   opacity: 0.8;
 }
 
-table .file-icon {
+.update-share table .file-icon {
   display: inline-block;
   color: #4e4e4e;
   border-radius: 4px;
   margin-right: 0.5em;
 }
 
-table .file-icon:hover {
+.update-share table .file-icon:hover {
   opacity: 0.8;
 }
 
@@ -97,11 +97,11 @@ table .file-icon:hover {
   justify-content: center;
 }
 
-table .delete:hover {
+.update-share table .delete:hover {
   opacity: 80%;
 }
 
-.bottom-container > div {
+.update-share .bottom-container > div {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -109,7 +109,7 @@ table .delete:hover {
   gap: 2rem;
 }
 
-.bottom-container > div > p.error-text {
+.update-share .bottom-container > div > p.error-text {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -117,7 +117,7 @@ table .delete:hover {
   gap: 2rem;
 }
 
-.bottom-container {
+.update-share .bottom-container {
   margin-top: 2rem;
   display: flex;
   flex-direction: row;
@@ -136,35 +136,12 @@ table .delete:hover {
   justify-content: space-between;
 }
 
-.update-share .confirm-popup {
-  max-width: 16rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.update-share .confirm-popup p {
-  font-size: larger;
-}
-
-.update-share .confirm-popup div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.update-share .confirm-popup button {
-  padding: 0.5rem 0.7rem;
-  border-radius: 5px;
-}
-
 @media (max-width: 768px) {
-  .created-column {
+  .update-share .created-column {
     display: none;
   }
 
-  .delete-button {
+  .update-share .delete-button {
     width: 100% !important;
   }
 }
